@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- '4.5'
+- '5.10'
+- stable
+sudo: false
+after_script:
+- cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+cache:
+  directories:
+  - node_modules
